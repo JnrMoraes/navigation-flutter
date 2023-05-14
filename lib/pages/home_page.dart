@@ -33,6 +33,14 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Go to Detail by route'),
             ),
+             TextButton(
+              onPressed: () async {
+               var message =  await Navigator.of(context)
+                    .pushNamed('/detail2', arguments: 'Param X');
+                    print('Message retrieved by navigation:-> $message');
+              },
+              child: const Text('Go to Detail two and wait'),
+            ),
           ],
         ),
       ),
